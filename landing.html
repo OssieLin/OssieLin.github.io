@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osmond Yu-Wei Lin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0 auto;
+            width: 60%;
+            font-family: "Courier New", Courier, monospace;
+            background-color: #B3202C;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px 40px;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;  /* Increased from 20px */
+        }
+
+        .name {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+
+        .icon {
+            font-size: 1.5rem;
+        }
+
+        .time {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div>
+            <div class="name">
+                Osmond Yu-Wei Lin
+            </div>
+            <div class="quote">
+                "the more i know, the more i feel i know nothing at all"
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="mailto:osmond0629@gmail.com" title="Email">
+                <i class="fas fa-envelope icon"></i>
+            </a>
+            <a href="https://github.com/OssieLin" title="GitHub">
+                <i class="fab fa-github icon"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/osmondlin007/" title="LinkedIn">
+                <i class="fab fa-linkedin icon"></i>
+            </a>
+            <a href="https://ossielin.github.io/assets/resume_yuwei.pdf" title="CV">
+                <i class="fas fa-file-alt icon"></i>
+            </a>
+            <a href="https://open.spotify.com/user/ccdfx5qdxq8agmuczj50um7ao?si=9b9ad671cc204ae0" title="Spotify">
+                <i class="fab fa-spotify icon"></i>
+            </a>
+        </div>
+    </div>
+    <div class="time" id="taipei-time" style="margin-bottom: 0px; font-size: 1rem;"></div>
+    <div class="time" id="sf-time" style="font-size: 1rem;"></div>
+    <script>
+        function updateTime() {
+            const options = {
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZone: 'Asia/Taipei'
+            };
+            
+            // Format function to ensure consistent time formatting
+            function formatTime(date, timezone) {
+                const options = {
+                    hour12: false,
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    timeZone: timezone
+                };
+                return date.toLocaleTimeString('en-US', options);
+            }
+
+            const now = new Date();
+            
+            // Taipei time
+            document.getElementById('taipei-time').textContent = 
+                'Taipei ' + formatTime(now, 'Asia/Taipei');
+            
+            // San Francisco time
+            document.getElementById('sf-time').textContent = 
+                'San Francisco ' + formatTime(now, 'America/Los_Angeles');
+        }
+        
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
