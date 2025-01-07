@@ -1,2 +1,2 @@
 ### developing...
-check out my [personal site](https://OssieLin.github.io/index.html)
+check out my [personal site](https://OssieLin.github.io)
