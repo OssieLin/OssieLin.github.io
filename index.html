@@ -4,163 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Osmond Yu-Wei Lin</title>
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        #welcome-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #B3202C;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            cursor: pointer;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        #welcome-text {
-            font-size: 3rem;
-            color: white;
-            font-family: "Courier New", Courier, monospace;
-            text-align: center;
-            opacity: 0;
-            animation: fadeIn 2s ease-in forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        body {
-            margin: 0 auto;
-            width: 60%;
-            font-family: "Courier New", Courier, monospace;
-            background-color: #B3202C;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 20px 40px;
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            gap: 40px;  /* Increased from 20px */
-        }
-
-        .name {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        .quote {
-            font-style: italic;
-            font-size: 1rem;
-            margin-top: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-
-        .social-links a:hover {
-            opacity: 0.8;
-        }
-
-        .icon {
-            font-size: 1.5rem;
-        }
-
-        .time {
-            font-family: "Courier New", Courier, monospace;
-            font-size: 1.2rem;
-            margin-top: 15px;
-            letter-spacing: 1px;
-        }
-
-        .content-section {
-            margin-top: 30px;
-            width: 100%;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            border-bottom: 2px solid white;
-            padding-bottom: 5px;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .content-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            transition: transform 0.2s;
-        }
-
-        .content-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .content-card h3 {
-            margin: 0 0 10px 0;
-        }
-
-        .content-card p {
-            margin: 0;
-            font-size: 0.9rem;
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+    <!-- Your main.js -->
+    <script src="./js/main.js" defer></script>
 </head>
 <body>
     <div id="welcome-overlay">
-        <div id="welcome-text">Hello 👋🏻<br>click to get to know me</div>
+        <div id="welcome-text">
+            Hello! This is Osmond 😃
+            <br><br>
+            <div id="dynamic-text"></div>
+            <br>
+            say hi to me <span class="waving-hand">👋🏻</span>
+        </div>
     </div>
 
     <div class="header-container">
         <div>
-            <div class="name">
-                Osmond Yu-Wei Lin
-            </div>
-            <div class="quote">
-                "the more i know, the more i feel i know nothing at all"
-            </div>
+            <div class="name">Osmond Yu-Wei Lin</div>
+            <div class="quote">"the more i know, the more i feel i know nothing at all"</div>
         </div>
         <div class="social-links">
             <a href="mailto:osmond0629@gmail.com" title="Email">
@@ -172,16 +38,22 @@
             <a href="https://www.linkedin.com/in/osmondlin007/" title="LinkedIn">
                 <i class="fab fa-linkedin icon"></i>
             </a>
-            <a href="https://ossielin.github.io/assets/resume_yuwei.pdf" title="CV">
-                <i class="fas fa-file-alt icon"></i>
+            <a href="./assets/resume_yuwei.pdf" title="CV">
+                <i class="fa-solid fa-address-book"></i>
             </a>
             <a href="https://open.spotify.com/user/ccdfx5qdxq8agmuczj50um7ao?si=9b9ad671cc204ae0" title="Spotify">
                 <i class="fab fa-spotify icon"></i>
             </a>
         </div>
     </div>
-    <div class="time" id="taipei-time" style="margin-bottom: 0px; font-size: 1rem;"></div>
-    <div class="time" id="sf-time" style="font-size: 1rem;"></div>
+
+    <div class="visitor-counter">
+        <span id="visitor-count">0</span> people have said hi to me
+        <span id="trend-indicator" class="trend-arrow">↑</span>
+    </div>
+
+    <div class="time" id="taipei-time"></div>
+    <div class="time" id="sf-time"></div>
 
     <div class="content-section">
         <div class="section-title">Projects</div>
@@ -190,76 +62,27 @@
                 <h3>Project Name</h3>
                 <p>Brief description of your project and technologies used</p>
             </a>
-            <!-- Add more projects as needed -->
         </div>
     </div>
 
     <div class="content-section">
-        <div class="section-title">Blog Posts</div>
+        <div class="section-title">Blog</div>
         <div class="content-grid">
             <a href="#" class="content-card">
                 <h3>Latest Post Title</h3>
                 <p>Short description of your latest blog post goes here...</p>
             </a>
-            <!-- Add more blog posts as needed -->
         </div>
     </div>
 
     <div class="content-section">
-        <div class="section-title">Learning Resources</div>
+        <div class="section-title">Other</div>
         <div class="content-grid">
             <a href="#" class="content-card">
                 <h3>Programming</h3>
                 <p>Curated list of programming resources and tutorials</p>
             </a>
-            <a href="#" class="content-card">
-                <h3>Computer Science</h3>
-                <p>Essential CS concepts and study materials</p>
-            </a>
-            <!-- Add more resource categories as needed -->
         </div>
     </div>
-
-    <script>
-        // Welcome overlay functionality
-        document.getElementById('welcome-overlay').addEventListener('click', function() {
-            this.classList.add('hidden');
-        });
-
-        function updateTime() {
-            const options = {
-                hour12: false,
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                timeZone: 'Asia/Taipei'
-            };
-            
-            // Format function to ensure consistent time formatting
-            function formatTime(date, timezone) {
-                const options = {
-                    hour12: false,
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    timeZone: timezone
-                };
-                return date.toLocaleTimeString('en-US', options);
-            }
-
-            const now = new Date();
-            
-            // Taipei time
-            document.getElementById('taipei-time').textContent = 
-                'Taipei ' + formatTime(now, 'Asia/Taipei');
-            
-            // San Francisco time
-            document.getElementById('sf-time').textContent = 
-                'San Francisco ' + formatTime(now, 'America/Los_Angeles');
-        }
-        
-        updateTime();
-        setInterval(updateTime, 1000);
-    </script>
 </body>
 </html>

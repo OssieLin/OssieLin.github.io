@@ -1,0 +1,261 @@
+#welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #B3202C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#welcome-text {
+    font-size: 3rem;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Body and General Styles */
+body {
+    margin: 0 auto;
+    width: 60%;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #B3202C;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 40px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+/* Time Display */
+.time {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 1px;
+}
+
+/* Content Sections */
+.content-section {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.content-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Additional CSS for dynamic text */
+.greeting-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#greeting-text {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#wave-icon-container {
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s;
+}
+
+#wave-icon-container:hover {
+    transform: scale(1.1);
+}
+
+/* Add animation for shaking */
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(15deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+.waving-hand {
+    display: inline-block;
+    animation: shake 0.8s infinite;
+    transform-origin: center;
+    cursor: pointer;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    12.5% { transform: rotate(20deg); }
+    25% { transform: rotate(0deg); }
+    37.5% { transform: rotate(-10deg); }
+    50% { transform: rotate(0deg); }
+    62.5% { transform: rotate(5deg); }
+    75% { transform: rotate(0deg); }
+    87.5% { transform: rotate(-15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+#dynamic-text {
+    height: 1.5em; /* Fixed height for the dynamic text container */
+    min-height: 24px; /* Minimum height to prevent collapse */
+    margin: 20px 0; /* Consistent margin top and bottom */
+    display: block; /* Ensures block-level spacing */
+}
+
+/* If you want to ensure the text stays centered vertically within its container */
+#dynamic-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visitor-counter {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.1em;
+    color: white;
+}
+
+#visitor-count {
+    font-weight: bold;
+    margin: 0 5px;
+    color: white;
+}
+
+.trend-arrow {
+    display: inline-block;
+    margin-left: 8px;
+    color: #28a745;
+    font-size: 1.2em;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-3px);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.trend-up {
+    color: #28a745;
+    transform: translateY(-2px);
+}
+
+.trend-down {
+    color: #dc3545;
+    transform: rotate(180deg);
+}
+
+.trend-neutral {
+    color: #ffc107;
+    transform: rotate(90deg);
+}
