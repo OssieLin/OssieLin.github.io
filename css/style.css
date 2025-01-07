@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    cursor: pointer;
+    cursor: none !important;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -20,6 +20,7 @@
     text-align: center;
     opacity: 0;
     animation: fadeIn 2s ease-in forwards;
+    cursor: pointer;
 }
 
 @keyframes fadeIn {
@@ -258,4 +259,36 @@ a:hover {
 .trend-neutral {
     color: #ffc107;
     transform: rotate(90deg);
+}
+
+/* Use the Font Awesome hand icon as cursor */
+#welcome-overlay, #welcome-text {
+    cursor: none; /* Hide default cursor */
+}
+
+/* Create a custom cursor element */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    display: none; /* Initially hidden */
+}
+
+.custom-cursor i {
+    font-size: 32px; /* Larger size */
+    color: white !important;
+    text-shadow: 
+        0 0 5px rgba(0,0,0,0.8),
+        0 0 10px rgba(0,0,0,0.5);
+}
+
+#welcome-overlay {
+    cursor: none;
+}
+
+/* Hide default cursor when over welcome overlay */
+#welcome-overlay * {
+    cursor: none !important;
 }

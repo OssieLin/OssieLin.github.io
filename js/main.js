@@ -41,6 +41,31 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    const cursor = document.querySelector('.custom-cursor');
+
+    if (!cursor || !welcomeOverlay) {
+        console.error('Missing elements:', { cursor, welcomeOverlay });
+        return;
+    }
+
+    console.log('Elements found:', { cursor, welcomeOverlay });
+
+    welcomeOverlay.addEventListener('mouseenter', () => {
+        cursor.style.display = 'block';
+        console.log('Mouse entered welcome overlay');
+    });
+
+    welcomeOverlay.addEventListener('mouseleave', () => {
+        cursor.style.display = 'none';
+        console.log('Mouse left welcome overlay');
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        console.log('Mouse moved:', e.clientX, e.clientY);
+    });
 });
 
 // Function to update times
