@@ -67,3 +67,52 @@ document.addEventListener('DOMContentLoaded', function() {
     updateTimes(); // Initial update
     setInterval(updateTimes, 1000); // Update every second
 });
+
+// Dynamic text array with your phrases
+const texts = [
+    "Get to know me?",
+    "Want to explore my projects?",
+    "Curious about my experiences?",
+    "Let's connect!",
+    "Find out more about me!"
+];
+
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingDelay = 100; // Made slightly faster for better flow
+
+function typeWriter() {
+    const currentText = texts[textIndex];
+    const dynamicText = document.getElementById('dynamic-text');
+
+    if (!dynamicText) return;
+
+    if (isDeleting) {
+        dynamicText.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        dynamicText.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    // Speed adjustments
+    let speed = isDeleting ? typingDelay / 2 : typingDelay;
+
+    // Check if word is complete
+    if (!isDeleting && charIndex === currentText.length) {
+        speed = 2000; // Pause longer at the end of each phrase
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        speed = 500;
+    }
+
+    setTimeout(typeWriter, speed);
+}
+
+// Start the typewriter effect when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    typeWriter();
+});
