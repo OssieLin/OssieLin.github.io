@@ -31,10 +31,14 @@
         <div class="profile-section">
             <div class="profile-frame">
                 <img 
-                    src="assets/pfp.jpg"
+                    src="https://raw.githubusercontent.com/OssieLin/OssieLin.github.io/main/assets/pfp.jpg"
                     alt="Osmond Yu-Wei Lin" 
                     onload="console.log('Image loaded successfully')" 
-                    onerror="console.error('Error loading image')"
+                    onerror="function fallbackToLocal() { 
+                        this.onerror=null; 
+                        this.src='./assets/pfp.jpg';
+                        console.log('Falling back to local image');
+                    }; fallbackToLocal.call(this)"
                 />
             </div>
             <div class="name-quote">
