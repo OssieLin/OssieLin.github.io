@@ -28,32 +28,57 @@
     </div>
 
     <div class="header-container">
-        <div>
-            <div class="name">Osmond Yu-Wei Lin</div>
-            <div class="quote">"the more i know, the more i feel i know nothing at all"</div>
-        </div>
-        <div class="social-links">
-            <a href="mailto:osmond0629@gmail.com" title="Email" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-envelope icon"></i>
-            </a>
-            <a href="https://github.com/OssieLin" title="GitHub" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github icon"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/osmondlin007/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin icon"></i>
-            </a>
-            <a href="https://ossielin.github.io/assets/resume_yuwei.pdf" title="CV" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-address-book"></i>
-            </a>
-            <a href="https://open.spotify.com/user/ccdfx5qdxq8agmuczj50um7ao?si=9b9ad671cc204ae0" title="Spotify" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-spotify icon"></i>
-            </a>
+        <div class="profile-section">
+            <div class="profile-frame">
+                <img 
+                    src="/Users/User/Developer/portfolio-website/assets/pfp.jpg" 
+                    alt="Osmond Yu-Wei Lin" 
+                    onload="console.log('Image loaded successfully')" 
+                    onerror="console.error('Error loading image')"
+                />
+            </div>
+            <div class="name-quote">
+                <div class="name">Osmond Yu-Wei Lin</div>
+                <div class="quote">"the more i know, the more i feel i know nothing at all"</div>
+                <div class="social-links">
+                    <a href="mailto:osmond0629@gmail.com" title="Email" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-envelope icon"></i>
+                    </a>
+                    <a href="https://github.com/OssieLin" title="GitHub" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github icon"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/osmondlin007/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin icon"></i>
+                    </a>
+                    <a href="https://ossielin.github.io/assets/resume_yuwei.pdf" title="CV" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-address-book"></i>
+                    </a>
+                    <a href="https://open.spotify.com/user/ccdfx5qdxq8agmuczj50um7ao?si=9b9ad671cc204ae0" title="Spotify" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-spotify icon"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="visitor-counter">
         <span id="visitor-count">0</span> people have said hi to me
-        <span id="trend-indicator" class="trend-arrow">↑</span>
+        <svg class="sparkline" width="60" height="30" stroke="#28a745" fill="none" stroke-width="2">
+            <!-- Background with shadow -->
+            <defs>
+                <filter id="shadow">
+                    <feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.2"/>
+                </filter>
+            </defs>
+            <rect x="0" y="0" width="60" height="30" fill="rgba(255,255,255,0.1)" filter="url(#shadow)" rx="4"/>
+            
+            <!-- Axes -->
+            <line x1="5" y1="25" x2="55" y2="25" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+            <line x1="5" y1="5" x2="5" y2="25" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+            
+            <!-- Sparkline -->
+            <path class="line" d="M5,20 15,18 25,22 35,15 45,17 55,12" stroke="#28a745" fill="none"/>
+        </svg>
     </div>
 
     <div class="time" id="taipei-time"></div>
