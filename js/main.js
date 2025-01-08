@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
     const cursor = document.querySelector('.custom-cursor');
+    // welcomeOverlay is already defined above, no need to redefine
 
     if (!cursor || !welcomeOverlay) {
         console.error('Missing elements:', { cursor, welcomeOverlay });
@@ -51,20 +51,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Elements found:', { cursor, welcomeOverlay });
 
-    welcomeOverlay.addEventListener('mouseenter', () => {
-        cursor.style.display = 'block';
-        console.log('Mouse entered welcome overlay');
+    // Update mouse position whenever it moves
+    document.addEventListener('mousemove', (e) => {
+        if (welcomeOverlay.contains(e.target)) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursor.classList.add('visible');
+        } else {
+            cursor.classList.remove('visible');
+        }
+    });
+
+    welcomeOverlay.addEventListener('mouseenter', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        cursor.classList.add('visible');
     });
 
     welcomeOverlay.addEventListener('mouseleave', () => {
-        cursor.style.display = 'none';
-        console.log('Mouse left welcome overlay');
+        cursor.classList.remove('visible');
     });
 
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        console.log('Mouse moved:', e.clientX, e.clientY);
+    // Hide cursor when overlay is clicked
+    welcomeOverlay.addEventListener('click', () => {
+        cursor.classList.remove('visible');
     });
 });
 

@@ -269,23 +269,27 @@ a:hover {
 /* Create a custom cursor element */
 .custom-cursor {
     position: fixed;
-    top: 0;
-    left: 0;
     pointer-events: none;
     z-index: 10000;
-    display: none; /* Initially hidden */
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.custom-cursor.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 .custom-cursor i {
-    font-size: 32px; /* Larger size */
+    font-size: 32px;
     color: white !important;
-    text-shadow: 
-        0 0 5px rgba(0,0,0,0.8),
-        0 0 10px rgba(0,0,0,0.5);
+    text-shadow: 0 0 5px rgba(0,0,0,0.8);
 }
 
 #welcome-overlay {
-    cursor: none;
+    cursor: none !important;
 }
 
 /* Hide default cursor when over welcome overlay */
