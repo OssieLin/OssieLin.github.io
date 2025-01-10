@@ -37,83 +37,17 @@
     pointer-events: none;
 }
 
-/* Base styles for all devices */
+/* Body and General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    .header-container {
-        display: flex;
-        flex-direction: column; /* Stack elements vertically */
-        align-items: flex-start; /* Align items to the left */
-        padding: 10px; /* Adjust padding for mobile */
-    }
-
-    .profile-section {
-        display: flex;
-        align-items: center; /* Align items in the profile section */
-        margin-bottom: 10px; /* Space between sections */
-    }
-
-    .profile-frame {
-        width: 80px; /* Smaller profile picture on mobile */
-        height: 80px;
-        margin-right: 10px; /* Space between image and text */
-    }
-
-    .name {
-        font-size: 1.2rem; /* Smaller font size */
-    }
-
-    .quote {
-        font-size: 0.8rem; /* Smaller font size */
-    }
-
-    .social-links {
-        display: flex;
-        flex-direction: row; /* Keep social links in a row */
-        gap: 5px; /* Space between social links */
-        margin-top: 5px; /* Space above social links */
-    }
-
-    .visitor-counter {
-        font-size: 0.9rem; /* Smaller font size for visitor counter */
-    }
-
-    .sparkline {
-        width: 40px; /* Adjust sparkline size for mobile */
-        height: 20px;
-    }
-}
-
-/* Desktop styles */
-@media (min-width: 769px) {
-    .header-container {
-        display: flex;
-        flex-direction: row; /* Keep elements in a row */
-        align-items: center; /* Center items */
-    }
-
-    .profile-frame {
-        width: 150px; /* Larger profile picture on desktop */
-        height: 150px;
-    }
-
-    .name {
-        font-size: 2rem; /* Larger font size */
-    }
-
-    .quote {
-        font-size: 1.1rem; /* Larger font size */
-    }
-
-    .visitor-counter {
-        font-size: 1rem; /* Normal font size for visitor counter */
-    }
+    margin: 0 auto;
+    width: 60%;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #B3202C;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 40px;
 }
 
 .header-container {
@@ -131,8 +65,8 @@ body {
 }
 
 .profile-frame {
-    width: 20vw;
-    height: auto;
+    width: 150px;
+    height: 150px;
     min-width: 150px;
     min-height: 150px;
     border: 3px solid white;
@@ -173,13 +107,14 @@ body {
 /* Social Links */
 .social-links {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     margin-top: 10px;
 }
 
 .social-links a {
     color: white;
     text-decoration: none;
+    font-size: 1.2rem;
     font-size: 1.3rem;
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -188,7 +123,6 @@ body {
     opacity: 0.8;
     transform: translateY(-2px);
 }
-
 .social-links .icon {
     transition: color 0.2s ease;
 }
@@ -367,10 +301,10 @@ a:hover {
     transform: rotate(90deg);
 }
 
-/* Use the Font Awesome hand icon as cursor */
 #welcome-overlay, #welcome-text {
     cursor: none; /* Hide default cursor */
 }
+
 
 /* Create a custom cursor element */
 .custom-cursor {
@@ -392,10 +326,6 @@ a:hover {
     font-size: 32px;
     color: white !important;
     text-shadow: 0 0 5px rgba(0,0,0,0.8);
-}
-
-#welcome-overlay {
-    cursor: none !important;
 }
 
 /* Hide default cursor when over welcome overlay */
