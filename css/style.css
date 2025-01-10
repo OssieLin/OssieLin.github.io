@@ -37,17 +37,57 @@
     pointer-events: none;
 }
 
-/* Body and General Styles */
+/* Base styles for all devices */
 body {
-    margin: 0 auto;
-    width: 60%;
-    font-family: "Courier New", Courier, monospace;
-    background-color: #B3202C;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 40px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items */
+    }
+
+    .profile-frame {
+        width: 100px; /* Smaller profile picture on mobile */
+        height: 100px;
+    }
+
+    .name {
+        font-size: 1.5rem; /* Adjust font size */
+    }
+
+    .quote {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .social-links {
+        flex-direction: column; /* Stack social links */
+        align-items: center; /* Center items */
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .header-container {
+        flex-direction: row; /* Keep elements in a row */
+    }
+
+    .profile-frame {
+        width: 150px; /* Larger profile picture on desktop */
+        height: 150px;
+    }
+
+    .name {
+        font-size: 2rem; /* Larger font size */
+    }
+
+    .quote {
+        font-size: 1.1rem; /* Larger font size */
+    }
 }
 
 .header-container {
@@ -65,8 +105,8 @@ body {
 }
 
 .profile-frame {
-    width: 150px;
-    height: 150px;
+    width: 20vw;
+    height: auto;
     min-width: 150px;
     min-height: 150px;
     border: 3px solid white;
