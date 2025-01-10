@@ -47,33 +47,55 @@ body {
 /* Mobile styles */
 @media (max-width: 768px) {
     .header-container {
+        display: flex;
         flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center items */
+        align-items: flex-start; /* Align items to the left */
+        padding: 10px; /* Adjust padding for mobile */
+    }
+
+    .profile-section {
+        display: flex;
+        align-items: center; /* Align items in the profile section */
+        margin-bottom: 10px; /* Space between sections */
     }
 
     .profile-frame {
-        width: 100px; /* Smaller profile picture on mobile */
-        height: 100px;
+        width: 80px; /* Smaller profile picture on mobile */
+        height: 80px;
+        margin-right: 10px; /* Space between image and text */
     }
 
     .name {
-        font-size: 1.5rem; /* Adjust font size */
+        font-size: 1.2rem; /* Smaller font size */
     }
 
     .quote {
-        font-size: 0.9rem; /* Adjust font size */
+        font-size: 0.8rem; /* Smaller font size */
     }
 
     .social-links {
-        flex-direction: column; /* Stack social links */
-        align-items: center; /* Center items */
+        display: flex;
+        flex-direction: row; /* Keep social links in a row */
+        gap: 5px; /* Space between social links */
+        margin-top: 5px; /* Space above social links */
+    }
+
+    .visitor-counter {
+        font-size: 0.9rem; /* Smaller font size for visitor counter */
+    }
+
+    .sparkline {
+        width: 40px; /* Adjust sparkline size for mobile */
+        height: 20px;
     }
 }
 
 /* Desktop styles */
 @media (min-width: 769px) {
     .header-container {
+        display: flex;
         flex-direction: row; /* Keep elements in a row */
+        align-items: center; /* Center items */
     }
 
     .profile-frame {
@@ -87,6 +109,10 @@ body {
 
     .quote {
         font-size: 1.1rem; /* Larger font size */
+    }
+
+    .visitor-counter {
+        font-size: 1rem; /* Normal font size for visitor counter */
     }
 }
 
