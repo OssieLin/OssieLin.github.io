@@ -1,2 +1,2 @@
 ## developing......
-if you feel like it...... [say hi to me](https://OssieLin.github.io)
+if you feel like it...... [visit me](https://OssieLin.github.io)
