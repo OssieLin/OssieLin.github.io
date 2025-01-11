@@ -1,77 +1,138 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Your awesome title | Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</title>
-<meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Your awesome title" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
-<link rel="canonical" href="/" />
-<meta property="og:url" content="/" />
-<meta property="og:site_name" content="Your awesome title" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Your awesome title" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Your awesome title","name":"Your awesome title","url":"/"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Your awesome title" /></head>
-<body><header class="site-header" role="banner">
+<html lang="en">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">Your awesome title</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
-      </nav></div>
-</header>
-<main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <div class="home">
-<h2 class="post-list-heading">Posts</h2>
-    <ul class="post-list"><li><span class="post-meta">Jan 11, 2025</span>
-        <h3>
-          <a class="post-link" href="/jekyll/update/2025/01/11/welcome-to-jekyll.html">
-            Welcome to Jekyll!
-          </a>
-        </h3></li></ul>
-
-    <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></div>
-
-      </div>
-    </main><footer class="site-footer h-card">
-  <data class="u-url" href="/"></data>
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">Your awesome title</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">Your awesome title</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
-      </div>
-
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
-</div>
-
-      <div class="footer-col footer-col-3">
-        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osmond Yu-Wei Lin</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+    <!-- Your main.js -->
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+    <div class="custom-cursor">
+        <i class="fa-regular fa-hand" style="color: white;"></i>
     </div>
 
-  </div>
+    <div id="welcome-overlay">
+        <div id="welcome-text">
+            Hello! This is Osmond 😃
+            <br><br>
+            <div id="dynamic-text"></div>
+            <br>
+            say hi to me <span class="waving-hand">👋🏻</span>
+        </div>
+    </div>
 
-</footer>
+    <div class="header-container">
+        <div class="profile-section">
+            <div class="profile-frame">
+                <img 
+                    src="https://raw.githubusercontent.com/OssieLin/OssieLin.github.io/main/assets/pfp.jpg"
+                    alt="Osmond Yu-Wei Lin" 
+                    onload="console.log('Image loaded successfully')" 
+                    onerror="function fallbackToLocal() {  
+                        this.onerror=null; 
+                        this.src='./assets/pfp.jpg';
+                        console.log('Falling back to local image');
+                    }; fallbackToLocal.call(this)"
+                />
+            </div>
+            <div class="name-quote">
+                <div class="name">
+                    <a href="https://ossielin.github.io/assets/resume_yuwei.pdf" title="CV" target="_blank" rel="noopener noreferrer">
+                        <p>Osmond Yu-Wei Lin</p>
+                    </a>
+                </div>
+                <div class="quote">"the more I know, the more I feel I know nothing at all"</div>
+                <div class="social-links">
+                    <a href="mailto:osmond0629@gmail.com" title="Email" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-envelope icon"></i>
+                    </a>
+                    <a href="https://github.com/OssieLin" title="GitHub" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github icon"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/osmondlin007/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin icon"></i>
+                    </a>
+                    <a href="https://ossielin.github.io/assets/resume_yuwei.pdf" title="CV" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-address-book"></i>
+                    </a>
+                    <a href="https://open.spotify.com/user/ccdfx5qdxq8agmuczj50um7ao?si=9b9ad671cc204ae0" title="Spotify" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-spotify icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="status">currently -> applying to college</div>
+
+    <div class="visitor-counter">
+        <span id="visitor-count">0</span> people have said hi to me
+        <svg class="sparkline" width="60" height="30" stroke="#28a745" fill="none" stroke-width="2">
+            <!-- Background with shadow -->
+            <defs>
+                <filter id="shadow">
+                    <feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.2"/>
+                </filter>
+            </defs>
+            <rect x="0" y="0" width="60" height="30" fill="rgba(255,255,255,0.1)" filter="url(#shadow)" rx="4"/>
+
+            <!-- Axes -->
+            <line x1="5" y1="25" x2="55" y2="25" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+            <line x1="5" y1="5" x2="5" y2="25" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+
+            <!-- Sparkline -->
+            <path class="line" d="M5,20 15,18 25,22 35,15 45,17 55,12" stroke="#28a745" fill="none"/>
+        </svg>
+    </div>
+
+    <div class="time" id="taipei-time"></div>
+    <div class="time" id="sf-time"></div>
+
+    <div class="content-section">
+        <div class="section-title">Projects</div>
+        <div class="content-grid-container">
+            <div class="content-card">
+                <a href="https://github.com/OssieLin/Visualization-of-Taylor-Series" target="_blank" rel="noopener noreferrer">
+                    <h3>Visualization of Taylor Series</h3>
+                    <p>Shows how more terms of Taylor Polynomials can approximate a function better</p>
+                    <p class="card-date">Jun 2024</p>
+                </a>
+            </div>
+            <div class="content-card">
+                <a href="https://github.com/OssieLin/Comparative-Analysis-of-Primality-Testing-Algorithms" target="_blank" rel="noopener noreferrer">
+                    <h3>Primality Tests</h3>
+                    <p>Comparison of different primality tests & Reducing pseudoprimes</p>
+                    <p class="card-date">Mar 2024</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="section-title">Blog</div>
+        <div class="content-grid-container">
+            <a href="#" class="content-card">
+                <h3>About me</h3>
+                <p>it's just about me</p>
+                <p class="card-date">Jan 2025</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="section-title">Other</div>
+        <div class="content-grid-container">
+            <a href="#" class="content-card">
+                <h3>developing...</h3>
+                <p>potentially some learning resources</p>
+            </a>
+        </div>
+    </div>
 </body>
-
 </html>
