@@ -89,12 +89,32 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin-top: 5px;
 }
 
 .name {
     font-size: 2rem;
     font-weight: bold;
     color: white;
+    margin-bottom: 1px;
+}
+
+.name a {
+    display: block; /* Makes the entire card clickable */
+    text-decoration: none; /* Removes the underline from the text */
+    color: white; 
+    height: 100%; /* Ensures the link spans the entire card */
+}
+
+.name p{
+    margin: 0;
+}
+
+.status {
+    font-size: 1.1rem;
+    color: white;
+    opacity: 0.9;
+    margin-bottom: 1px;
 }
 
 .quote {

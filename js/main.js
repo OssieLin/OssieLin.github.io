@@ -151,3 +151,7 @@ function typeWriter() {
 document.addEventListener('DOMContentLoaded', function() {
     typeWriter();
 });
+
+document.querySelectorAll('.name-letters').forEach(element => {
+    element.innerHTML = element.textContent.replace(/\S/g, "<span>$&</span>");
+});
