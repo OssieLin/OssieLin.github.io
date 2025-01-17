@@ -171,6 +171,21 @@ body {
     padding-bottom: 5px;
 }
 
+.section-title-link {
+    text-decoration: none;
+}
+
+.section-title-link .section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white; /* Keeps the color consistent */
+}
+
+.section-title-link:hover .section-title {
+    text-decoration: underline; /* Optional hover effect */
+    transform: translateY(-5px);
+}
+
 .content-grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

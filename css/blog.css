@@ -1,0 +1,41 @@
+/* Blog custom styles */
+body {
+    margin: 0 auto;
+    width: 60%;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #B3202C;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 30px;
+}
+
+h1 {
+    font-size: 2rem; /* or whatever size you want */
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+    width: 100%; /* Ensures the border stretches across the full width */
+    display: block; /* Ensures the heading takes up the full width */
+}
+
+a {
+    color: white; /* Make links white */
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #FFD700; /* Change link color on hover for contrast */
+}
+
+/* Blog post styles */
+.post-content {
+    padding: 20px;
+    line-height: 1.6; /* Improve readability */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: white; /* Ensure all headings are white */
+}
