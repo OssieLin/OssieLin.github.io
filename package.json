@@ -1,0 +1,27 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "if you feel like it...... visit me @  [my site](https://OssieLin.github.io)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.72.0",
+    "firebase": "^11.2.0",
+    "next": "^15.1.6",
+    "next-sanity": "^9.8.45",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sanity": "^3.72.0",
+    "styled-components": "^6.1.14"
+  }
+}
