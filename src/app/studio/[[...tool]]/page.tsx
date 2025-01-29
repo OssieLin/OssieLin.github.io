@@ -7,13 +7,19 @@
  * https://github.com/sanity-io/next-sanity
  */
 
-import { NextStudio } from 'next-sanity/studio'
-import config from '../../../../sanity.config'
+import { NextStudio } from 'next-sanity/studio';
+import config from '../../../../sanity.config';
 
-export const dynamic = 'force-static'
-
-export { metadata, viewport } from 'next-sanity/studio'
+export const dynamic = 'force-static'; // Ensures that Next.js handles this as a static page
 
 export default function StudioPage() {
-  return <NextStudio config={config} />
+  return <NextStudio config={config} />;
+}
+
+export async function generateStaticParams() {
+  return [
+    { tool: ["example"] }, // Replace with actual static paths
+    { tool: ["demo"] },
+    { tool: [] }, // Handles the base `/studio/` case
+  ];
 }

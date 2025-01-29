@@ -3,6 +3,7 @@ import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import { updateVisitorCount } from '../utils/updateVisitorCount';
 
+
 export default function Home() {
     
   useCustomCursor();
@@ -49,12 +50,12 @@ export default function Home() {
         <div className="profile-section">
           <div className="profile-frame">
             <img
-              src="https://raw.githubusercontent.com/OssieLin/OssieLin.github.io/main/assets/pfp.jpg"
+              src="https://raw.githubusercontent.com/OssieLin/OssieLin.github.io/main/public/pfp.jpg"
               alt="Osmond Yu-Wei Lin"
               onLoad={() => console.log('Image loaded successfully')}
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = './assets/pfp.jpg';
+                e.target.src = './public/pfp.jpg';
                 console.log('Falling back to local image');
               }}
             />

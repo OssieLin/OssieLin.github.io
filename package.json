@@ -8,7 +8,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "deploy": "npm run export && git add . && git commit -m 'Deploy' && git push origin `git rev-parse --abbrev-ref HEAD`:gh-pages"
   },
   "keywords": [],
   "author": "",
@@ -23,5 +24,6 @@
     "react-dom": "^19.0.0",
     "sanity": "^3.72.0",
     "styled-components": "^6.1.14"
-  }
+  },
+  "homepage": "https://ossielin.github.io"
 }
