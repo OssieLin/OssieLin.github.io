@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === "production";
+const isGitHubPages = process.env.NEXT_PUBLIC_GITHUB_PAGES === "true";
 
 const nextConfig = {
   output: "export",
   images: { unoptimized: true },
-  basePath: isProd ? "/OssieLin.github.io" : "", // Use basePath only for GitHub Pages
-  assetPrefix: isProd ? "/OssieLin.github.io/" : "/", // Fix local & GitHub Pages
+  basePath: isGitHubPages ? "/OssieLin.github.io" : "", // Set basePath for GitHub Pages
+  assetPrefix: isGitHubPages ? "/OssieLin.github.io/" : "/", // Ensure assets load correctly
   trailingSlash: true,
 };
 
