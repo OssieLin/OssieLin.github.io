@@ -2,11 +2,11 @@
 const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
 
 const nextConfig = {
-  output: 'export', // Replaces `next export`
-  basePath: isGitHubPages ? '/OssieLin.github.io' : '',
-  assetPrefix: isGitHubPages ? '/OssieLin.github.io/' : '',
+  output: 'export', // Enables static site generation (replaces `next export`)
+  basePath: isGitHubPages ? '/OssieLin.github.io' : '', // Ensure correct basePath
+  assetPrefix: isGitHubPages ? '/OssieLin.github.io/' : '', // Fixes CSS/JS paths
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true, // Required for GitHub Pages (no Next.js image optimization)
   },
 };
 
