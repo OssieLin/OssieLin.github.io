@@ -1,6 +1,6 @@
-import useCustomCursor from '../hooks/useCustomCursor'; 
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
+import useCustomCursor from '../hooks/useCustomCursor';
 import { updateVisitorCount } from '../utils/updateVisitorCount';
 
 
