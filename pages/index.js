@@ -50,12 +50,12 @@ export default function Home() {
         <div className="profile-section">
           <div className="profile-frame">
             <img
-              src="https://raw.githubusercontent.com/OssieLin/OssieLin.github.io/main/public/pfp.jpg"
+              src="https://raw.githubusercontent.com/OssieLin/OssieLin.github.io/main/public/pfp2.jpg"
               alt="Osmond Yu-Wei Lin"
               onLoad={() => console.log('Image loaded successfully')}
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = './public/pfp.jpg';
+                e.target.src = './public/pfp2.jpg';
                 console.log('Falling back to local image');
               }}
             />
@@ -71,7 +71,7 @@ export default function Home() {
                 <p>Osmond Yu-Wei Lin</p>
               </a>
             </div>
-            <div className="quote">"the more I know, the more I feel I know nothing at all"</div>
+            <div className="quote">"Turn on, Tune in, Drop out."</div>
             <div className="social-links">
               <a href="mailto:osmond0629@gmail.com" title="Email" target="_blank" rel="noopener noreferrer">
                 <i className="fas fa-envelope icon"></i>
