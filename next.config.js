@@ -10,4 +10,10 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = {
+    assetPrefix: '/OssieLin.github.io',  // The name of the repository
+    basePath: '/OssieLin.github.io',    // The name of the repository
+    output: 'export',                    // For static export (if using 'next export')
+    trailingSlash: true,                 // Adds trailing slashes to paths, can help with GitHub Pages
+  };
+  
