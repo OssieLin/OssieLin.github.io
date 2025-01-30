@@ -1,12 +1,13 @@
 /** @type {import('next').NextConfig} */
-const isGitHubPages = process.env.NEXT_PUBLIC_GITHUB_PAGES === "true";
+const isGitHubPages = process.env.NEXT_PUBLIC_GITHUB_PAGES === 'true';
 
 const nextConfig = {
-  output: "export",
-  images: { unoptimized: true },
-  basePath: isGitHubPages ? "/OssieLin.github.io" : "", // Set basePath for GitHub Pages
-  assetPrefix: isGitHubPages ? "/OssieLin.github.io/" : "/", // Ensure assets load correctly
-  trailingSlash: true,
+  output: 'export', // This replaces `next export`
+  basePath: isGitHubPages ? '/OssieLin.github.io' : '',
+  assetPrefix: isGitHubPages ? '/OssieLin.github.io' : '',
+  images: {
+    unoptimized: true, // This is needed for static exports if using images
+  },
 };
 
 module.exports = nextConfig;
