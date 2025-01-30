@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
-const isGitHubPages = process.env.NEXT_PUBLIC_GITHUB_PAGES === 'true';
+const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
 
 const nextConfig = {
-  output: 'export', // This replaces `next export`
+  output: 'export', // Replaces `next export`
   basePath: isGitHubPages ? '/OssieLin.github.io' : '',
-  assetPrefix: isGitHubPages ? '/OssieLin.github.io' : '',
+  assetPrefix: isGitHubPages ? '/OssieLin.github.io/' : '',
   images: {
-    unoptimized: true, // This is needed for static exports if using images
+    unoptimized: true, // Required for static export
   },
 };
 
