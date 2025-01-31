@@ -1,36 +1,43 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Script from "next/script";
-import useCustomCursor from "../js/useCustomCursor";
 
 export default function Home() {
   useEffect(() => {
-    // Firebase script
-    const firebaseScript = document.createElement("script");
-    firebaseScript.src = "/OssieLin.github.io/js/firebase.js";
-    firebaseScript.defer = true;
-    document.body.appendChild(firebaseScript);
+    // Load and execute useCustomCursor.js
+    const loadCursorScript = () => {
+      const script = document.createElement("script");
+      script.src = "/js/useCustomCursor.js"; // No need for "OssieLin.github.io" here
+      script.defer = true;
+      document.body.appendChild(script);
 
-    // Update Visitor Count script
-    const visitorScript = document.createElement("script");
-    visitorScript.src = "/OssieLin.github.io/js/updateVisitorCount.js";
-    visitorScript.defer = true;
-    document.body.appendChild(visitorScript);
+      script.onload = () => {
+        if (typeof window.useCustomCursor === "function") {
+          window.useCustomCursor(); // Run the function once script is loaded
+        }
+      };
+    };
 
-    // Custom Cursor script
-    const cursorScript = document.createElement("script");
-    cursorScript.src = "/OssieLin.github.io/js/useCustomCursor.js";
-    cursorScript.defer = true;
-    document.body.appendChild(cursorScript);
+    // Load Firebase and Visitor Counter Scripts
+    const loadScript = (src) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.defer = true;
+      document.body.appendChild(script);
+    };
+
+    loadScript("/js/firebase.js");
+    loadScript("/js/updateVisitorCount.js");
+    loadCursorScript();
   }, []);
-    
-  useCustomCursor();
 
   const [visitorCount, setVisitorCount] = useState(null);
 
   useEffect(() => {
     const fetchAndUpdateVisitorCount = async () => {
-      const count = await updateVisitorCount(); // Call the function
-      if (count !== null) setVisitorCount(count); // Update state
+      if (typeof window.updateVisitorCount === "function") {
+        const count = await window.updateVisitorCount(); // Call the function
+        if (count !== null) setVisitorCount(count);
+      }
     };
 
     fetchAndUpdateVisitorCount();
