@@ -20,9 +20,10 @@ class MyDocument extends Document {
           <NextScript />
 
           {/* ✅ Fix JS Paths for GitHub Pages */}
-          <script src="/OssieLin.github.io/utils/firebase.js" defer></script>
-          <script src="/OssieLin.github.io/utils/updateVisitorCount.js" defer></script>
-          <script src="/OssieLin.github.io/hooks/useCustomCursor.js" defer></script>
+          <script src="/OssieLin.github.io/js/firebase.js" defer></script>
+          <script src="/OssieLin.github.io/js/updateVisitorCount.js" defer></script>
+          <script src="/OssieLin.github.io/js/useCustomCursor.js" defer></script>
+
 
           {/* ✅ Firebase SDK */}
           <script
