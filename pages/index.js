@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Script from "next/script";
+import useCustomCursor from "../js/useCustomCursor";
 
 export default function Home() {
   useEffect(() => {
