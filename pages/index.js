@@ -1,10 +1,26 @@
-import Head from 'next/head';
-import React, { useEffect, useState } from 'react';
-import useCustomCursor from '../hooks/useCustomCursor';
-import { updateVisitorCount } from '../utils/updateVisitorCount';
-
+import { useEffect } from "react";
+import Script from "next/script";
 
 export default function Home() {
+  useEffect(() => {
+    // Firebase script
+    const firebaseScript = document.createElement("script");
+    firebaseScript.src = "/OssieLin.github.io/js/firebase.js";
+    firebaseScript.defer = true;
+    document.body.appendChild(firebaseScript);
+
+    // Update Visitor Count script
+    const visitorScript = document.createElement("script");
+    visitorScript.src = "/OssieLin.github.io/js/updateVisitorCount.js";
+    visitorScript.defer = true;
+    document.body.appendChild(visitorScript);
+
+    // Custom Cursor script
+    const cursorScript = document.createElement("script");
+    cursorScript.src = "/OssieLin.github.io/js/useCustomCursor.js";
+    cursorScript.defer = true;
+    document.body.appendChild(cursorScript);
+  }, []);
     
   useCustomCursor();
 
