@@ -475,6 +475,23 @@ a:hover {
         height: 90px;
     }
 
+    .name {
+        font-size: 1.2rem;
+    }
+
+    .status {
+        font-size: 0.9rem;
+    }
+
+    .quote {
+        font-size: 0.9rem;
+    }
+
+    .social-links a {
+        font-size: 1rem;
+    }
+
+
     .section-title {
         font-size: 1rem;
         margin-bottom: 8px;
