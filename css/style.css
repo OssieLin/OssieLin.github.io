@@ -397,7 +397,7 @@ a:hover {
 
 @media (max-width: 768px) {
     body {
-        width: 100%;
+        width: 90%;
         margin: 0;
         padding: 0; /* Remove padding completely for mobile */
     }
@@ -487,6 +487,12 @@ a:hover {
     .content-card {
         padding: 10px;
         font-size: 0.8rem;
+    }
+
+    .content-date {
+        font-size: 0.7rem;
+        right: 8px;
+        top: 6px;
     }
 
     .social-links a {
