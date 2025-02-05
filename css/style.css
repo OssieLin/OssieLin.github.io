@@ -393,3 +393,113 @@ a:hover {
 .sparkline rect {
     stroke: none;
 }
+
+
+@media (max-width: 768px) {
+    /* Body adjustments: Expand to full width on mobile */
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 5px 15px;
+    }
+
+    .header-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+
+    /* Profile section adjustments */
+    .profile-section {
+        flex-direction: column; /* Stack items vertically */
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .profile-frame {
+        width: 120px;
+        height: 120px;
+    }
+
+    .name-quote {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Content sections */
+    .content-section {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .content-grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 10px;
+    }
+
+    .content-card {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Social links adjustments */
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-links a {
+        font-size: 1rem;
+    }
+
+    /* Remove or reduce spacing and adjust alignment for mobile */
+    .visitor-counter {
+        margin: 15px 0;
+    }
+
+    .greeting-section {
+        margin-top: 15px;
+        text-align: left; /* Left align for better use of screen width */
+    }
+
+    /* Custom cursor adjustments (optional) */
+    .custom-cursor {
+        font-size: 24px;
+    }
+}
+
+/* Additional adjustments for very small devices like smartphones */
+@media (max-width: 480px) {
+    .profile-frame {
+        width: 100px;
+        height: 100px;
+    }
+
+    .section-title {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .content-grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Even smaller grid items */
+    }
+
+    .content-card {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    .social-links a {
+        font-size: 0.9rem;
+    }
+
+    /* Sparkline adjustments for smaller devices */
+    .sparkline {
+        width: 60px; /* Smaller width for very small screens */
+        height: 10px; /* Smaller height */
+    }
+}
