@@ -394,7 +394,6 @@ a:hover {
     stroke: none;
 }
 
-
 @media (max-width: 768px) {
     body {
         width: 90%;
@@ -402,77 +401,18 @@ a:hover {
         padding: 0; /* Remove padding completely for mobile */
     }
 
-    .header-container {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start;
-        padding: 10px 0;
-    }
-
     .profile-section {
-        flex-direction: column; /* Stack items vertically */
-        gap: 15px;
-        align-items: flex-start;
-    }
-
-    .profile-frame {
-        width: 120px;
-        height: 120px;
-        min-width: 120px;
-        min-height: 120px;
+        flex-direction: row;  /* Align profile image & name-quote side by side */
+        align-items: center;
+        gap: 10px;
     }
 
     .name-quote {
-        align-items: center;
-        text-align: center;
-    }
-
-    .content-section {
-        margin-top: 15px;
-        width: 100%;
-    }
-
-    .section-title {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-    }
-
-    .content-grid-container {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: 10px;
-    }
-
-    .content-card {
-        padding: 15px;
-        font-size: 0.9rem;
-    }
-
-    .social-links {
-        gap: 10px;
-    }
-
-    .social-links a {
-        font-size: 1rem;
-    }
-
-    .visitor-counter {
-        margin: 15px 0;
-    }
-
-    .greeting-section {
-        margin-top: 15px;
-        text-align: left; /* Left align for better use of screen width */
-    }
-
-    .custom-cursor {
-        font-size: 24px;
-    }
-}
-
-/* Additional adjustments for very small devices like smartphones (max-width: 480px) */
-@media (max-width: 480px) {
-    .profile-frame {
-        width: 90px;
-        height: 90px;
+        flex: 1;  /* Take up available space */
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .name {
@@ -491,37 +431,133 @@ a:hover {
         font-size: 1rem;
     }
 
+    .visitor-counter {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+        font-size: 1rem;
+    }
+
+    .content-section {
+        width: 100%;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .content-grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 10px;
+    }
+
+    .sparkline {
+        display: inline-block;
+        width: 60px;  /* Adjust width */
+        height: 20px;  /* Adjust height */
+        vertical-align: middle;
+    }
+
+    .card-date {
+        position: relative;  /* Avoid overlapping */
+        font-size: 0.75rem;  /* Slightly smaller */
+        bottom: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        width: 100%;
+        padding:10px; /* Remove padding completely for mobile */
+    }
+
+    .time {
+        text-align: center;
+        margin: 10px 0;
+        font-size: 0.8rem;
+        color: white;
+    }
+
+    .profile-section {
+        flex-direction: row; /* Keep items side by side */
+        align-items: center;
+        gap: 8px; /* Reduce gap to fit */
+    }
+
+    .profile-frame {
+        width: 90px; /* Smaller profile pic */
+        height: 90px;
+        min-width: 90px;
+        min-height: 90px;
+    }
+
+    .name-quote {
+        flex: 1;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .name {
+        font-size: 1.3rem; /* Reduce size slightly */
+    }
+    
+    .quote {
+        font-size: 0.9rem; /* Make smaller to fit better */
+        opacity: 0.8;
+    }
+
+    .status {
+        font-size: 0.9rem; /* Smaller font */
+        margin-top: 2px;
+    }
+
+    .visitor-counter {
+        width: 100%;
+        text-align: left;
+        font-size: 0.8rem; /* Reduce size */
+        margin: 4px 2;
+    }
 
     .section-title {
         font-size: 1rem;
         margin-bottom: 8px;
     }
 
+    .content-section {
+        width: 90%;
+        margin: 0;
+        padding: 5px 0; /* Reduce padding */
+    }
+
     .content-grid-container {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Smaller grid items */
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Smaller columns */
+        gap: 8px;
     }
 
     .content-card {
-        padding: 10px;
+        padding: 12px;
+        font-size: 0.6rem;
+    }
+
+    .content-card h3 {
         font-size: 0.8rem;
+        margin-top: 5px;
     }
 
-    .content-date {
-        font-size: 0.7rem;
-        right: 8px;
-        top: 6px;
-    }
-
-    .social-links a {
-        font-size: 0.9rem;
-    }
-
-    /* Sparkline adjustments for smaller devices */
     .sparkline {
-        width: 60px; /* Smaller width for very small screens */
-        height: 10px; /* Smaller height */
+        display: inline-block;
+        width: 100px; /* Reduce width */
+        height: 30px; /* Reduce height */
+        vertical-align: middle;
+    }
+
+    .card-date {
+        position: absolute;
+        font-size: 0.7rem; /* Smaller font */
+        bottom: 2px;
     }
 }
+
 
 /* Add this for ensuring the layout has no horizontal overflow */
 html, body {
