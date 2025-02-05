@@ -396,11 +396,10 @@ a:hover {
 
 
 @media (max-width: 768px) {
-    /* Body adjustments: Expand to full width on mobile */
     body {
         width: 100%;
         margin: 0;
-        padding: 5px 15px;
+        padding: 0; /* Remove padding completely for mobile */
     }
 
     .header-container {
@@ -409,7 +408,6 @@ a:hover {
         padding: 10px 0;
     }
 
-    /* Profile section adjustments */
     .profile-section {
         flex-direction: column; /* Stack items vertically */
         gap: 15px;
@@ -419,6 +417,8 @@ a:hover {
     .profile-frame {
         width: 120px;
         height: 120px;
+        min-width: 120px;
+        min-height: 120px;
     }
 
     .name-quote {
@@ -426,7 +426,6 @@ a:hover {
         text-align: center;
     }
 
-    /* Content sections */
     .content-section {
         margin-top: 15px;
         width: 100%;
@@ -447,7 +446,6 @@ a:hover {
         font-size: 0.9rem;
     }
 
-    /* Social links adjustments */
     .social-links {
         gap: 10px;
     }
@@ -456,7 +454,6 @@ a:hover {
         font-size: 1rem;
     }
 
-    /* Remove or reduce spacing and adjust alignment for mobile */
     .visitor-counter {
         margin: 15px 0;
     }
@@ -466,17 +463,16 @@ a:hover {
         text-align: left; /* Left align for better use of screen width */
     }
 
-    /* Custom cursor adjustments (optional) */
     .custom-cursor {
         font-size: 24px;
     }
 }
 
-/* Additional adjustments for very small devices like smartphones */
+/* Additional adjustments for very small devices like smartphones (max-width: 480px) */
 @media (max-width: 480px) {
     .profile-frame {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
 
     .section-title {
@@ -485,7 +481,7 @@ a:hover {
     }
 
     .content-grid-container {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Even smaller grid items */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Smaller grid items */
     }
 
     .content-card {
@@ -502,4 +498,9 @@ a:hover {
         width: 60px; /* Smaller width for very small screens */
         height: 10px; /* Smaller height */
     }
+}
+
+/* Add this for ensuring the layout has no horizontal overflow */
+html, body {
+    overflow-x: hidden;
 }
