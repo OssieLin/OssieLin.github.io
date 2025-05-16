@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #B3202C;
+    background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +42,7 @@ body {
     margin: 0 auto;
     width: 60%;
     font-family: "Courier New", Courier, monospace;
-    background-color: #B3202C;
+    background-color: #000;
     color: white;
     display: flex;
     flex-direction: column;
