@@ -125,5 +125,13 @@
             </a>
         </div>
     </div>
+    <script>
+        const nav = performance.getEntriesByType('navigation')[0];
+        if (nav && nav.type === 'reload') {
+          // Redirect to landing page on refresh
+          window.location.href = 'index.html';
+        }
+      </script>
+      
 </body>
 </html>
