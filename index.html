@@ -1,138 +1,56 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osmond Lin</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
-    <!-- Your main.js -->
-    <script src="./js/main.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Osmond Lin</title>
+  <style>
+    .heading {
+      font-size: 2.4em;
+    }
+    body {
+      margin: 0;
+      font-family: "Courier New", Courier, monospace;
+      background: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+    li {
+      font-size: 1.7em;
+      margin: 5px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <div class="custom-cursor">
-        <i class="fa-regular fa-hand" style="color: white;"></i>
-    </div>
-
-    <div id="welcome-overlay">
-        <div id="welcome-text">
-            Hello! This is Osmond 😃
-            <br><br>
-            <div id="dynamic-text"></div>
-            <br>
-            say hi to me <span class="waving-hand">👋🏻</span>
-        </div>
-    </div>
-
-    <div class="header-container">
-        <div class="profile-section">
-            <div class="profile-frame">
-                <img 
-                    src="https://raw.githubusercontent.com/OssieLin/OssieLin.github.io/main/assets/pfp2.jpg"
-                    alt="Osmond Lin" 
-                    onload="console.log('Image loaded successfully')" 
-                    onerror="function fallbackToLocal() {  
-                        this.onerror=null; 
-                        this.src='./assets/pfp.jpg';
-                        console.log('Falling back to local image');
-                    }; fallbackToLocal.call(this)"
-                />
-            </div>
-            <div class="name-quote">
-                <div class="name">
-                    <a href="https://ossielin.github.io/assets/resume_yuwei.pdf" title="CV" target="_blank" rel="noopener noreferrer">
-                        <p>Osmond Lin</p>
-                    </a>
-                </div>
-                <div class="quote">"Turn on, Tune in, Drop out."</div>
-                <div class="social-links">
-                    <a href="mailto:osmond0629@gmail.com" title="Email" target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-envelope icon"></i>
-                    </a>
-                    <a href="https://github.com/OssieLin" title="GitHub" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github icon"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/osmondlin007/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-linkedin icon"></i>
-                    </a>
-                    <a href="https://ossielin.github.io/assets/resume_yuwei.pdf" title="CV" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-address-book"></i>
-                    </a>
-                    <a href="https://open.spotify.com/user/ccdfx5qdxq8agmuczj50um7ao?si=9b9ad671cc204ae0" title="Spotify" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-spotify icon"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="status">currently -> post college app</div>
-
-    <div class="visitor-counter">
-        <span id="visitor-count">0</span> people have said hi to me
-        <svg class="sparkline" width="60" height="30" stroke="#28a745" fill="none" stroke-width="2">
-            <!-- Background with shadow -->
-            <defs>
-                <filter id="shadow">
-                    <feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.2"/>
-                </filter>
-            </defs>
-            <rect x="0" y="0" width="60" height="30" fill="rgba(255,255,255,0.1)" filter="url(#shadow)" rx="4"/>
-            
-            <!-- Axes -->
-            <line x1="5" y1="25" x2="55" y2="25" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
-            <line x1="5" y1="5" x2="5" y2="25" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
-            
-            <!-- Sparkline -->
-            <path class="line" d="M5,20 15,18 25,22 35,15 45,17 55,12" stroke="#28a745" fill="none"/>
-        </svg>
-    </div>
-
-    <div class="time" id="taipei-time"></div>
-    <div class="time" id="sf-time"></div>
-
-    <div class="content-section">
-        <div class="section-title">Previously</div>
-        <div class="content-grid-container">
-            <div class="content-card">
-                <a href="https://github.com/OssieLin/Visualization-of-Taylor-Series" target="_blank" rel="noopener noreferrer">
-                    <h3>Visualization of Taylor Series</h3>
-                    <p>Shows how more terms of Taylor Polynomials can approximate a function better</p>
-                    <p class="card-date">Jun 2024</p>
-                </a>
-            </div>
-            <div class="content-card">
-                <a href="https://github.com/OssieLin/Comparative-Analysis-of-Primality-Testing-Algorithms" target="_blank" rel="noopener noreferrer">
-                    <h3>Primality Tests</h3>
-                    <p>Comparison of different primality tests & Reducing pseudoprimes</p>
-                    <p class="card-date">Mar 2024</p>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="content-section">
-        <div class="section-title">Blog</div>
-        <div class="content-grid-container">
-            <a href="#" class="content-card">
-                <h3>About me</h3>
-                <p>it's just about me</p>
-                <p class="card-date">Jan 2025</p>
-            </a>
-        </div>
-    </div>
-
-    <div class="content-section">
-        <div class="section-title">Other</div>
-        <div class="content-grid-container">
-            <a href="#" class="content-card">
-                <h3>developing...</h3>
-                <p>potentially some learning resources</p>
-            </a>
-        </div>
-    </div>
+  <div class="heading">
+    Osmond Lin
+  </div>
+  <div class="content">
+    <ul>
+      <li><a href="home.html">home</a></li>
+      <li><a href="https://ossielin.github.io/assets/resume_yuwei.pdf" target="_blank">cv</a></li>
+      <li><a href="blog/">blog</a></li>
+      <li><a href="https://open.spotify.com/user/ccdfx5qdxq8agmuczj50um7ao?si=9b9ad671cc204ae0">music</a></li>
+      <li><a href="https://github.com/OssieLin" target="_blank">github</a></li>
+      <li><a href="mailto:osmond0629@gmail.com">contact</a></li>
+    </ul>
+  </div>
 </body>
 </html>
